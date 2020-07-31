@@ -15,12 +15,10 @@ $(document).ready(function () {
   }, 1000);
   setInterval(update, 1000);
 
-
-
-
-
-
-
-
-  
+  function create9rows() {
+    for (var i = 0; i <= 9; i++) {
+      var row = $('<div class=row">');
+      console.log("this is new div: ", divContainer);
+    }
+  }
 });
