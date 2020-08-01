@@ -14,59 +14,89 @@ $(document).ready(function () {
   }, 1000);
   setInterval(update, 1000);
 
-  // create the 9 rows for the table
-  for (var hour = 9; hour < 18; hour++) {
-    var divRow = $("<div>");
-    divRow.addClass("row mt-1 mb-2");
-    divRow.attr("value", [hour]);
+  var timeArray = [
+    "9:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "1:00 PM",
+    "2:00 PM",
+    "3:00 PM",
+    "4:00 PM",
+    "5:00 PM",
+  ];
 
-    // add the Time column
+  timeArray.forEach((time, index) => {
+    console.log(time);
+    console.log("index: ", index);
+    var divRow = $("<div>");
+    divRow.addClass("row mt-1 mb-1");
+
+    // create time columns with time showing
     var colTime = $("<div>");
     colTime.addClass("col-sm-2 border border-warning rounded pt-4");
-    colTime.attr("value", [hour]);
-    // to get correct 'am' or 'pm' on the time and not have it in military time
-    if (hour === 12) {
-      colTime.text([hour] + ":00 PM");
-    } else if (hour > 12) {
-      colTime.text([hour] - 12 + ":00 PM");
-    } else {
-      colTime.text([hour] + ":00 AM");
-    }
+    colTime.text(time);
     divRow.append(colTime);
-    // add the Text column
+    // create the textarea columns
     var colText = $("<textarea>");
-    colText.addClass("col-sm-9 border border-secondary rounded pt-4");
-    colText.attr("id", "textArea");
-    colText.attr("value", [hour]);
+    colText.addClass(
+      "col-sm-9 border border-secondary rounded pt-4 textArea text-muted"
+    );
     divRow.append(colText);
-    // add the Save column
+    // create the save btn columns with index attr
     var colSave = $("<div>");
     colSave.addClass("col-sm-1 btn btn-outline-info rounded pt-3");
-    colSave.attr("value", [hour]);
+    colSave.attr("index", [index]);
     colSave.attr("type", "button");
     colSave.text("Save");
     divRow.append(colSave);
 
-    // add the rows and columns to the container div
+    // Add the rows with the columns to the div container
     $(".container").append(divRow);
-  }
+  });
 
   // Click function for saveBtn
   $(".btn").on("click", function () {
-    var btnClick = $(this).attr("value");
-    var textArea = $("#textArea").text();
+    // grab index from save button
+    var index = $(this).attr("index");
+    console.log("This is the btn your clicking index: ", index);
 
-    console.log("This value was clicked: ", btnClick);
-
-    getText();
-    console.log(getText());
+    // call getText to grab the text that is put in the textarea that matches the savebtn
+    getText(index);
   });
 
   // grab the text info from our textarea
-  function getText() {
-    var textInfo = $("#textArea").val();
-    console.log("This is the text we input: ", textInfo);
-    textArray.push(textInfo);
-    console.log("This is our text info in an array: ", textArray);
+  function getText(index) {
+    var storageArray = [];
+    //grab both variables time and textArea
+    var time = document.getElementsByClassName(
+      "col-sm-2 border border-warning rounded pt-4"
+    );
+    var textArea = document.getElementsByClassName(
+      "col-sm-9 border border-secondary rounded pt-4 textArea text-muted"
+    );
+    //pass index into time[index].innerText returns the time slot
+    var indexTime = time[index].innerText;
+
+    //pass index into textArea[index].value returns text value
+    var indexOfTextArea = textArea[index].value;
+
+    // make object to save to local storage
+    localStorage.setItem("timeslot", indexTime);
+    localStorage.setItem("text", indexOfTextArea);
+    var textObj = {
+      timeslot: indexTime,
+      textarea: indexOfTextArea,
+    };
+
+    storageArray = JSON.parse(localStorage.getItem("textObj")) || [];
+    storageArray.push(textObj);
+    localStorage.setItem("textObj", JSON.stringify(storageArray));
+
+    // saveLocalStorage(storageArray);
+  }
+
+  function saveLocalStorage(storageArray) {
+    console.log("textObj", textObj);
   }
 });
