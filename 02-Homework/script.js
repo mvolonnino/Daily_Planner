@@ -59,6 +59,7 @@ $(document).ready(function () {
     console.log("This value was clicked: ", btnClick);
 
     getText();
+    console.log(getText());
   });
 
   // grab the text info from our textarea
