@@ -4,7 +4,7 @@ Daily Planner is a working scheduler to help plan out your busy work day.
 
 It will show the current day and current time, along with timeblocks that are grayed out for past time, red for current time, and green for future time.
 
-It allows you to save the timeslots that you enter text into  to localstorage so on reload of page, you will still have the events that you save.
+It allows you to save the timeslots that you enter text into  to localstorage so on reload of page, you will still have the events that you save in the correct timeslot that you saved it too.
 
 -----------------------------------------------------
 ## Instalation
