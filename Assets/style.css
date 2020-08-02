@@ -16,18 +16,15 @@ textarea {
 p {
   font-size: 30px;
 }
-.myStyleTime {
-  border: 2px dotted black;
-  display: flex;
-  text-align: right;
+
+.container {
+  font-family: "Nunito", sans-serif;
 }
-.myStyle {
-  border: 2px solid black;
-  margin: 2px;
-}
+
 .jumbotron {
+  font-family: "Merriweather", serif;
   text-align: center;
-  background-color: transparent;
+  background-color: aliceblue;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
@@ -37,7 +34,7 @@ p {
   white-space: pre-wrap;
 }
 
-.time-block {
+.timeslot {
   text-align: center;
   border-radius: 15px;
 }
@@ -70,14 +67,18 @@ p {
 }
 
 .saveBtn {
+  background-color: white;
+}
+
+/* .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
-}
+} */
 
-.saveBtn i:hover {
+/* .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
-}
+} */

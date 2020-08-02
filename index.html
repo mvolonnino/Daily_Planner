@@ -4,37 +4,111 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <!-- Link to Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./Assets/style.css" />
-    <title>Work Day Scheduler</title>
+    <title>Daily Planner</title>
   </head>
-
   <body>
-    <header class="jumbotron">
+    <header class="jumbotron shadow">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="todayDate"></p>
       <p id="currentTime" class="lead"></p>
     </header>
+    <!-- container for the timeslots on Daily Planner -->
     <div class="container">
-      <!-- Timeblocks go here -->
+      <!-- Row 1 9AM -->
+      <div class="row timeslot" id="hr-9">
+        <div class="col-md-1 hour">9AM</div>
+        <textarea class="col-md-10 reservation" value="9"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 2 10AM -->
+      <div class="row timeslot" id="hr-10">
+        <div class="col-md-1 hour">10AM</div>
+        <textarea class="col-md-10 reservation" value="10"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 3 11AM -->
+      <div class="row timeslot" id="hr-11">
+        <div class="col-md-1 hour">11AM</div>
+        <textarea class="col-md-10 reservation" value="11"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 4 12PM -->
+      <div class="row timeslot" id="hr-12">
+        <div class="col-md-1 hour">12PM</div>
+        <textarea class="col-md-10 reservation" value="12"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 5 1PM -->
+      <div class="row timeslot" id="hr-13">
+        <div class="col-md-1 hour">1PM</div>
+        <textarea class="col-md-10 reservation" value="13"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 6 2PM -->
+      <div class="row timeslot" id="hr-14">
+        <div class="col-md-1 hour">2PM</div>
+        <textarea class="col-md-10 reservation" value="14"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 7 3PM -->
+      <div class="row timeslot" id="hr-15">
+        <div class="col-md-1 hour">3PM</div>
+        <textarea class="col-md-10 reservation" value="15"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 8 4PM -->
+      <div class="row timeslot" id="hr-16">
+        <div class="col-md-1 hour">4PM</div>
+        <textarea class="col-md-10 reservation" value="16"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
+      <!-- Row 9 5PM -->
+      <div class="row timeslot" id="hr-17">
+        <div class="col-md-1 hour">5PM</div>
+        <textarea class="col-md-10 reservation" value="17"></textarea>
+        <button class="col-md-1 btn btn-outline-info saveBtn far fa-save">
+          Save
+        </button>
+      </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
