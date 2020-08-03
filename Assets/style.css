@@ -27,7 +27,7 @@ p {
   background-color: aliceblue;
   color: black;
   border-radius: 0;
-  border-bottom: 10px solid black;
+  border: 5px solid black;
 }
 
 .description {
