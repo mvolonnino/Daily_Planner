@@ -25,7 +25,7 @@ $(document).ready(function () {
 
     localStorage.setItem(time, value);
   });
-
+  
   // grab from localstore the time and value - grab the row id that we want to place the reservation class - and then were making the value what we stored in the keyvalue of localstorage
   $("#hr-9 .reservation").val(localStorage.getItem("hr-9"));
   $("#hr-10 .reservation").val(localStorage.getItem("hr-10"));
